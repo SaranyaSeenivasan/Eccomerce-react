@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Login from './pages/Login';
@@ -23,7 +23,6 @@ function App() {
 
   return (
     <MyContext.Provider value={{ user, setUser,addcart,setAddcart,checkdel,setCheckdel,product,setProduct}}>
-      <Router>
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/signup' element={<Signup />} />
@@ -36,7 +35,6 @@ function App() {
           <Route path='/checkoutform' element={<Checkoutform/>}/>
           <Route path='/admindashboard' element={<Admindashboard/>}/>
         </Routes>
-      </Router>
     </MyContext.Provider>
   );
 }
